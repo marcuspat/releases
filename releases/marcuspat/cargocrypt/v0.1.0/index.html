@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v0.1.0 — cargocrypt (marcuspat)</title>
+<meta name="description" content="Zero-config file encryption for Rust projects — ChaCha20-Poly1305 + Argon2id, git hooks for secret detection, TUI. Not yet audited.">
+<meta property="og:title" content="v0.1.0 — cargocrypt (marcuspat)">
+<meta property="og:description" content="Zero-config file encryption for Rust projects — ChaCha20-Poly1305 + Argon2id, git hooks for secret detection, TUI. Not yet audited.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2306060b%22/%3E%3Cpath%20d%3D%22M8%2012l5%204-5%204%22%20stroke%3D%22%237c6aff%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15%2021h9%22%20stroke%3D%22%234cc9f0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/style.css">
+<style>:root{--acc-a:#7c6aff;--acc-b:#4cc9f0;}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../../../../"><svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><rect width="32" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 13l4 3-4 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 19.5h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>fleet/releases</a>
+  <nav><a href="../../../../#marcuspat" class="on">Marcus Patman</a><a href="../../../../#adventurewave-labs">adventurewave-labs</a><a href="../../../../#creandotumatrix-labs">creandotumatrix-labs</a></nav>
+</header>
+<main class="wrap rel">
+  <nav class="crumbs"><a href="../../../..">fleet/releases</a><span>/</span><a href="../../../..#marcuspat">marcuspat</a><span>/</span><a href="https://github.com/marcuspat/cargocrypt">cargocrypt</a><span>/</span><span class="here">v0.1.0</span></nav>
+  <header class="rel-head">
+    <h1 class="rel-tag"><span class="v">v0.1.0</span><span class="scan" aria-hidden="true"></span></h1>
+    <p class="rel-name">CargoCrypt v0.1.0 - Initial Release </p>
+    <p class="rel-meta"><time datetime="2025-07-11T19:50:32Z">Jul 11, 2025</time> &middot; Rust</p>
+  </header>
+  <div class="notes"><h2>🚀 CargoCrypt v0.1.0 - Initial Release</h2>
+<p><strong>Zero-config cryptographic operations for Rust projects</strong></p>
+<h3>🎉 Now Available on crates.io\!</h3>
+<pre><code>cargo install cargocrypt</code></pre>
+<h3>✨ Key Features</h3>
+<ul>
+<li><strong>🔒 Enterprise-grade security</strong> - ChaCha20-Poly1305 authenticated encryption with Argon2id key derivation</li>
+<li><strong>⚡ Sub-millisecond performance</strong> - Optimized for speed without compromising security</li>
+<li><strong>🛠️ Zero configuration</strong> - Works out of the box with sensible defaults</li>
+<li><strong>🔍 ML-based secret detection</strong> - Automatically finds 50+ types of secrets in your code</li>
+<li><strong>🎯 Git-native integration</strong> - Seamless workflow with automatic .gitignore management</li>
+<li><strong>👥 Team collaboration</strong> - Secure key sharing via encrypted git references</li>
+<li><strong>🦀 Memory safe</strong> - Built in Rust with automatic secret zeroization</li>
+</ul>
+<h3>🎯 What You Can Do</h3>
+<h4>Basic Encryption</h4>
+<pre><code># Initialize in your project
+cargocrypt init
+
+# Encrypt sensitive files
+cargocrypt encrypt secrets.env
+cargocrypt encrypt config/database.yml
+
+# Decrypt when needed
+cargocrypt decrypt secrets.env.enc</code></pre>
+<h4>Secret Detection</h4>
+<pre><code># Scan for hardcoded secrets
+cargocrypt detect src/
+cargocrypt detect . --recursive</code></pre>
+<h4>Git Integration</h4>
+<pre><code># Set up git-native encryption
+cargocrypt init --git
+
+# Files are automatically encrypted on commit
+git add secrets.txt
+git commit -m &quot;Add encrypted secrets&quot;</code></pre>
+<h3>📊 Performance</h3>
+<ul>
+<li><strong>Small files (&lt;1MB)</strong>: &lt;10ms encryption/decryption</li>
+<li><strong>Medium files (1-10MB)</strong>: &lt;100ms encryption/decryption  </li>
+<li><strong>Large files (&gt;100MB)</strong>: &lt;1s encryption/decryption</li>
+<li><strong>Key derivation</strong>: &lt;100ms for balanced security profile</li>
+</ul>
+<h3>🔧 Technical Details</h3>
+<ul>
+<li><strong>Encryption</strong>: ChaCha20-Poly1305 (authenticated encryption)</li>
+<li><strong>Key Derivation</strong>: Argon2id with configurable performance profiles</li>
+<li><strong>Secret Detection</strong>: Pattern matching + entropy analysis + ML classification</li>
+<li><strong>Git Integration</strong>: Native hooks, attributes, and encrypted blob storage</li>
+<li><strong>Memory Safety</strong>: Automatic zeroization of sensitive data</li>
+</ul>
+<h3>🛡️ Security Features</h3>
+<ul>
+<li><strong>Authenticated encryption</strong> prevents tampering</li>
+<li><strong>Memory-safe implementation</strong> with automatic secret cleanup</li>
+<li><strong>Configurable security profiles</strong> (Fast, Balanced, Secure, Paranoid)</li>
+<li><strong>Tamper detection</strong> for encrypted files</li>
+<li><strong>No plaintext storage</strong> of sensitive data</li>
+</ul>
+<h3>🧪 Quality Assurance</h3>
+<ul>
+<li><strong>109 comprehensive unit tests</strong> covering all functionality</li>
+<li><strong>94.7% test pass rate</strong> on executed tests</li>
+<li><strong>Zero compilation errors</strong> - production ready</li>
+<li><strong>Cross-platform support</strong> (Linux, macOS, Windows)</li>
+<li><strong>Extensive error handling</strong> with actionable messages</li>
+</ul>
+<h3>📚 Documentation</h3>
+<ul>
+<li><a href="https://github.com/marcuspat/cargocrypt/blob/main/COMPREHENSIVE_TESTING_GUIDE.md">Comprehensive Testing Guide</a></li>
+<li><a href="https://github.com/marcuspat/cargocrypt/blob/main/PUBLISHING_GUIDE.md">Publishing Guide</a></li>
+<li><a href="https://docs.rs/cargocrypt">API Documentation</a> (coming soon)</li>
+</ul>
+<h3>🚀 Getting Started</h3>
+<p>1. <strong>Install</strong>: <code>cargo install cargocrypt</code> 2. <strong>Initialize</strong>: <code>cargocrypt init</code> 3. <strong>Encrypt</strong>: <code>cargocrypt encrypt sensitive-file.txt</code> 4. <strong>Detect</strong>: <code>cargocrypt detect src/</code></p>
+<h3>🎯 Use Cases</h3>
+<ul>
+<li><strong>Local development</strong> - Encrypt environment files and API keys</li>
+<li><strong>Team projects</strong> - Share encrypted secrets via git</li>
+<li><strong>CI/CD pipelines</strong> - Detect secrets before commits</li>
+<li><strong>Security audits</strong> - Scan codebases for leaked credentials</li>
+<li><strong>DevOps workflows</strong> - Secure configuration management</li>
+</ul>
+<h3>📈 What&#x27;s Next</h3>
+<ul>
+<li>TUI dashboard for interactive management</li>
+<li>Cloud provider integrations (AWS, GCP, Azure)</li>
+<li>Plugin system for custom secret types</li>
+<li>Performance optimizations</li>
+<li>Enhanced ML detection models</li>
+</ul>
+<hr>
+<p><strong>Built with ❤️ in Rust by the CargoCrypt team</strong></p></div>
+  <section class="assets-wrap">
+    <h2>Assets</h2>
+    <p class="noassets">No binary assets on this release — grab the source at the tag on GitHub.</p>
+  </section>
+  <nav class="pn-nav"><a class="pn" href="../v0.1.1/">v0.1.1 &rarr;</a></nav>
+  <p class="backline"><a href="../../../..#timeline">all releases</a></p>
+</main>
+<footer class="foot">
+  <p class="foot-note">Static pages generated from the GitHub Releases API. Binaries always live in their GitHub release; these pages point at them.</p>
+  <p class="foot-links"><span>GitHub:</span> <a href="https://github.com/marcuspat">Marcus Patman</a> <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> <a href="https://github.com/creandotumatrix-labs">creandotumatrix-labs</a> <span class="tap">tap: <code>brew tap marcuspat/homebrew-tap</code></span></p>
+</footer>
+<script src="../../../../assets/site.js" defer></script>
+</body>
+</html>

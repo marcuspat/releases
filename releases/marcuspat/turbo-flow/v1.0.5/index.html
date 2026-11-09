@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v1.0.5 — turbo-flow (marcuspat)</title>
+<meta name="description" content="The rules layer for AI-written code — rig-lite: a fail-closed cross-model review gate, a written constitution, git-versioned memory. Any harness, any repo. v1-4">
+<meta property="og:title" content="v1.0.5 — turbo-flow (marcuspat)">
+<meta property="og:description" content="The rules layer for AI-written code — rig-lite: a fail-closed cross-model review gate, a written constitution, git-versioned memory. Any harness, any repo. v1-4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2306060b%22/%3E%3Cpath%20d%3D%22M8%2012l5%204-5%204%22%20stroke%3D%22%237c6aff%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15%2021h9%22%20stroke%3D%22%234cc9f0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/style.css">
+<style>:root{--acc-a:#7c6aff;--acc-b:#4cc9f0;}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../../../../"><svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><rect width="32" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 13l4 3-4 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 19.5h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>fleet/releases</a>
+  <nav><a href="../../../../#marcuspat" class="on">Marcus Patman</a><a href="../../../../#adventurewave-labs">adventurewave-labs</a><a href="../../../../#creandotumatrix-labs">creandotumatrix-labs</a></nav>
+</header>
+<main class="wrap rel">
+  <nav class="crumbs"><a href="../../../..">fleet/releases</a><span>/</span><a href="../../../..#marcuspat">marcuspat</a><span>/</span><a href="https://github.com/marcuspat/turbo-flow">turbo-flow</a><span>/</span><span class="here">v1.0.5</span></nav>
+  <header class="rel-head">
+    <h1 class="rel-tag"><span class="v">v1.0.5</span><span class="scan" aria-hidden="true"></span></h1>
+    <p class="rel-name">Alpha 1.0.5 </p>
+    <p class="rel-meta"><time datetime="2026-01-05T22:15:41Z">Jan 5, 2026</time> &middot; Shell</p>
+  </header>
+  <div class="notes"><p>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Turbo Flow Claude v1.0.5 Alpha Release Notes&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; January 2025&lt;br&gt; &lt;strong&gt;Type:&lt;/strong&gt; Feature Release&lt;/p&gt; &lt;hr&gt; &lt;h2&gt;Overview&lt;/h2&gt; &lt;p&gt;v1.0.5 brings comprehensive agent observability, multi-model AI support, and expanded alias coverage across all tools. This release focuses on giving developers better visibility into agent behavior and flexibility to use multiple AI models.&lt;/p&gt; &lt;hr&gt; &lt;h2&gt;New Features&lt;/h2&gt; &lt;h3&gt;agtrace - Agent Observability&lt;/h3&gt; &lt;p&gt;Local-first AI agent observability from Lanegrid. Monitor Claude Code, Codex, and Gemini CLI sessions with zero cloud dependencies.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;Live TUI Dashboard&lt;/strong&gt; - Real-time monitoring of agent activity, token usage, and costs&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Session History&lt;/strong&gt; - Browse and search across all agent sessions&lt;/li&gt; &lt;li&gt;&lt;strong&gt;MCP Integration&lt;/strong&gt; - Agents can query their own execution history&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Context Window Tracking&lt;/strong&gt; - Visualize token consumption over time&lt;/li&gt; &lt;/ul&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;agt-init      # Initialize in project agt-watch     # Launch live dashboard agt-sessions  # List all sessions agt-grep      # Search across sessions &lt;/code&gt;&lt;/pre&gt; &lt;h3&gt;Claudish - Multi-Model Proxy&lt;/h3&gt; &lt;p&gt;Access 100+ models through OpenRouter with a unified CLI interface.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;Model Switching&lt;/strong&gt; - Instantly switch between Grok, Gemini, GPT, Qwen, and more&lt;/li&gt; &lt;li&gt;&lt;strong&gt;OpenRouter Integration&lt;/strong&gt; - Single API key for all models&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Model Discovery&lt;/strong&gt; - Browse and compare available models&lt;/li&gt; &lt;/ul&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;claudish                 # Interactive mode claudish-grok           # Use Grok claudish-gemini         # Use Gemini claudish-gpt            # Use GPT-4o claudish-qwen           # Use Qwen claudish-models         # List all models &lt;/code&gt;&lt;/pre&gt; &lt;h3&gt;Expanded Alias Coverage&lt;/h3&gt; &lt;p&gt;91 aliases and 5 helper functions now included (up from 62 in v1.0.4).&lt;/p&gt; &lt;hr&gt; &lt;h2&gt;Enhanced Tools&lt;/h2&gt; &lt;h3&gt;Agentic QE&lt;/h3&gt; &lt;p&gt;New aliases for the full testing workflow:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;aqe-init      # Initialize testing aqe-generate  # Generate tests aqe-flaky     # Hunt flaky tests aqe-gate      # Quality gate check &lt;/code&gt;&lt;/pre&gt; &lt;h3&gt;Agentic Jujutsu&lt;/h3&gt; &lt;p&gt;New aliases for repository analysis:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;aj-status     # Repository status aj-analyze    # Analyze repository &lt;/code&gt;&lt;/pre&gt; &lt;h3&gt;Spec-Kit&lt;/h3&gt; &lt;p&gt;Full workflow coverage:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sk-const      # Define constitution sk-spec       # Write specifications sk-plan       # Create plan sk-tasks      # Break into tasks sk-impl       # Implement &lt;/code&gt;&lt;/pre&gt; &lt;h3&gt;AI Agent Skills&lt;/h3&gt; &lt;p&gt;Complete skill management:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;skills-info   # Get skill details skills-update # Update skills skills-remove # Remove skills &lt;/code&gt;&lt;/pre&gt; &lt;hr&gt; &lt;h2&gt;New Helper Functions&lt;/h2&gt; &lt;h3&gt;turbo-init&lt;/h3&gt; &lt;p&gt;One-command workspace initialization:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;turbo-init    # Initialize spec-kit + claude-flow &lt;/code&gt;&lt;/pre&gt; &lt;h3&gt;turbo-help&lt;/h3&gt; &lt;p&gt;Quick reference for all commands:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;turbo-help    # Show command reference &lt;/code&gt;&lt;/pre&gt; &lt;hr&gt; &lt;h2&gt;Alias Summary&lt;/h2&gt;</p>
+<p>Category | Count | New in v1.0.5 -- | -- | -- Claude Code | 2 | - Claude Flow | 7 | - Agentic Flow | 4 | - Agentic QE | 6 | +4 Agentic Jujutsu | 3 | +2 Claude Usage | 2 | - Spec-Kit | 9 | +5 OpenSpec | 8 | - agtrace | 6 | +6 (new) Claudish | 7 | +7 (new) AI Agent Skills | 7 | +3 MCP Servers | 3 | - PAL MCP | 2 | - Tmux | 30 | - Total Aliases | 91 | +29 Functions | 5 | +2</p>
+<p>&lt;hr&gt; &lt;h2&gt;Configuration&lt;/h2&gt; &lt;h3&gt;agtrace&lt;/h3&gt; &lt;p&gt;No configuration required. Initialize in any project with &lt;code&gt;agt-init&lt;/code&gt;.&lt;/p&gt; &lt;h3&gt;Claudish&lt;/h3&gt; &lt;p&gt;Set your OpenRouter API key:&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;export OPENROUTER_API_KEY=&#x27;sk-or-v1-...&#x27; &lt;/code&gt;&lt;/pre&gt; &lt;hr&gt; &lt;h2&gt;Known Issues&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;claudish&lt;/code&gt; requires OpenRouter API key (free tier available)&lt;/li&gt; &lt;li&gt;&lt;code&gt;agtrace watch&lt;/code&gt; requires terminal with TUI support&lt;/li&gt; &lt;li&gt;Some tmux aliases may conflict with existing shell aliases&lt;/li&gt; &lt;/ul&gt; &lt;hr&gt; &lt;h2&gt;What&#x27;s Next (v1.0.6)&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;Enhanced MCP server configuration UI&lt;/li&gt; &lt;li&gt;Automated skill recommendations based on project type&lt;/li&gt; &lt;li&gt;Integration with Claude Projects&lt;/li&gt; &lt;li&gt;Performance profiling for agent sessions&lt;/li&gt; &lt;/ul&gt; &lt;hr&gt; &lt;h2&gt;Contributors&lt;/h2&gt; &lt;p&gt;Thanks to the teams behind:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/lanegrid/agtrace&quot;&gt;agtrace&lt;/a&gt; - Lanegrid&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/MadAppGang/claudish&quot;&gt;Claudish&lt;/a&gt; - MadAppGang&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/ruvnet/claude-flow&quot;&gt;Claude Flow&lt;/a&gt; - ruvnet&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/ChrisRoyse/610ClaudeSubagents&quot;&gt;610ClaudeSubagents&lt;/a&gt; - ChrisRoyse&lt;/li&gt; &lt;/ul&gt; &lt;hr&gt; &lt;h2&gt;Feedback&lt;/h2&gt; &lt;p&gt;Report issues or request features:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;GitHub Issues: https://github.com/marcuspat/turbo-flow-claude/issues&lt;/li&gt; &lt;li&gt;Use 👍/👎 in Claude to provide feedback&lt;/li&gt; &lt;/ul&gt; &lt;hr&gt; &lt;p&gt;&lt;strong&gt;Full Changelog:&lt;/strong&gt; v1.0.4...v1.0.5&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;# Turbo Flow Claude v1.0.5 Alpha Release Notes</p>
+<p><strong>Release Date:</strong> January 2025   <strong>Type:</strong> Feature Release</p>
+<hr>
+<h3>Overview</h3>
+<p>v1.0.5 brings comprehensive agent observability, multi-model AI support, and expanded alias coverage across all tools. This release focuses on giving developers better visibility into agent behavior and flexibility to use multiple AI models.</p>
+<hr>
+<h3>New Features</h3>
+<h4>agtrace - Agent Observability</h4>
+<p>Local-first AI agent observability from Lanegrid. Monitor Claude Code, Codex, and Gemini CLI sessions with zero cloud dependencies.</p>
+<ul>
+<li><strong>Live TUI Dashboard</strong> - Real-time monitoring of agent activity, token usage, and costs</li>
+<li><strong>Session History</strong> - Browse and search across all agent sessions</li>
+<li><strong>MCP Integration</strong> - Agents can query their own execution history</li>
+<li><strong>Context Window Tracking</strong> - Visualize token consumption over time</li>
+</ul>
+<pre><code>agt-init      # Initialize in project
+agt-watch     # Launch live dashboard
+agt-sessions  # List all sessions
+agt-grep      # Search across sessions</code></pre>
+<h4>Claudish - Multi-Model Proxy</h4>
+<p>Access 100+ models through OpenRouter with a unified CLI interface.</p>
+<ul>
+<li><strong>Model Switching</strong> - Instantly switch between Grok, Gemini, GPT, Qwen, and more</li>
+<li><strong>OpenRouter Integration</strong> - Single API key for all models</li>
+<li><strong>Model Discovery</strong> - Browse and compare available models</li>
+</ul>
+<pre><code>claudish                 # Interactive mode
+claudish-grok           # Use Grok
+claudish-gemini         # Use Gemini
+claudish-gpt            # Use GPT-4o
+claudish-qwen           # Use Qwen
+claudish-models         # List all models</code></pre>
+<h4>Expanded Alias Coverage</h4>
+<p>91 aliases and 5 helper functions now included (up from 62 in v1.0.4).</p>
+<hr>
+<h3>Enhanced Tools</h3>
+<h4>Agentic QE</h4>
+<p>New aliases for the full testing workflow:</p>
+<pre><code>aqe-init      # Initialize testing
+aqe-generate  # Generate tests
+aqe-flaky     # Hunt flaky tests
+aqe-gate      # Quality gate check</code></pre>
+<h4>Agentic Jujutsu</h4>
+<p>New aliases for repository analysis:</p>
+<pre><code>aj-status     # Repository status
+aj-analyze    # Analyze repository</code></pre>
+<h4>Spec-Kit</h4>
+<p>Full workflow coverage:</p>
+<pre><code>sk-const      # Define constitution
+sk-spec       # Write specifications
+sk-plan       # Create plan
+sk-tasks      # Break into tasks
+sk-impl       # Implement</code></pre>
+<h4>AI Agent Skills</h4>
+<p>Complete skill management:</p>
+<pre><code>skills-info   # Get skill details
+skills-update # Update skills
+skills-remove # Remove skills</code></pre>
+<hr>
+<h3>New Helper Functions</h3>
+<h4>turbo-init</h4>
+<p>One-command workspace initialization:</p>
+<pre><code>turbo-init    # Initialize spec-kit + claude-flow</code></pre>
+<h4>turbo-help</h4>
+<p>Quick reference for all commands:</p>
+<pre><code>turbo-help    # Show command reference</code></pre>
+<hr>
+<h3>Alias Summary</h3>
+<p>| Category | Count | New in v1.0.5 | |----------|-------|---------------| | Claude Code | 2 | - | | Claude Flow | 7 | - | | Agentic Flow | 4 | - | | Agentic QE | 6 | +4 | | Agentic Jujutsu | 3 | +2 | | Claude Usage | 2 | - | | Spec-Kit | 9 | +5 | | OpenSpec | 8 | - | | agtrace | 6 | +6 (new) | | Claudish | 7 | +7 (new) | | AI Agent Skills | 7 | +3 | | MCP Servers | 3 | - | | PAL MCP | 2 | - | | Tmux | 30 | - | | <strong>Total Aliases</strong> | <strong>91</strong> | <strong>+29</strong> | | <strong>Functions</strong> | <strong>5</strong> | <strong>+2</strong> |</p>
+<hr>
+<h3>Installation</h3>
+<h4>New Installations</h4>
+<pre><code>devpod up https://github.com/marcuspat/turbo-flow-claude --ide vscode</code></pre>
+<h4>Existing Installations</h4>
+<p>Update aliases by re-running setup or sourcing the new aliases file:</p>
+<pre><code># Option 1: Re-run setup
+cd /workspaces/turbo-flow-claude/devpods &amp;&amp; ./setup.sh
+
+# Option 2: Source updated aliases
+curl -sSL https://raw.githubusercontent.com/marcuspat/turbo-flow-claude/main/devpods/aliases.sh &gt; ~/.turbo-aliases.sh
+source ~/.turbo-aliases.sh</code></pre>
+<hr>
+<h3>Breaking Changes</h3>
+<p>None. All existing aliases remain unchanged.</p>
+<hr>
+<h3>Dependencies Added</h3>
+<p>| Package | Type | Purpose | |---------|------|---------| | @lanegrid/<a href="https://github.com/lanegrid/agtrace">agtrace</a> | npm | Agent observability | | claudish | npm | Multi-model proxy |</p>
+<hr>
+<h3>Configuration</h3>
+<h4>agtrace</h4>
+<p>No configuration required. Initialize in any project with <code>agt-init</code>.</p>
+<h4><a href="https://github.com/MadAppGang/claudish">Claudish</a></h4>
+<p>Set your OpenRouter API key:</p>
+<pre><code>export OPENROUTER_API_KEY=&#x27;sk-or-v1-...&#x27;</code></pre>
+<hr>
+<h3>Known Issues</h3>
+<ul>
+<li><code>claudish</code> requires OpenRouter API key (free tier available)</li>
+<li><code>agtrace watch</code> requires terminal with TUI support</li>
+<li>Some tmux aliases may conflict with existing shell aliases</li>
+</ul>
+<hr>
+<h3>What&#x27;s Next (v1.0.6)</h3>
+<ul>
+<li>Enhanced MCP server configuration UI</li>
+<li>Automated skill recommendations based on project type</li>
+<li>Integration with Claude Projects</li>
+<li>Performance profiling for agent sessions</li>
+</ul>
+<hr>
+<h3>Contributors</h3>
+<p>Thanks to the teams behind:</p>
+<ul>
+<li><a href="https://github.com/lanegrid/agtrace">agtrace</a> - Lanegrid</li>
+<li><a href="https://github.com/MadAppGang/claudish">Claudish</a> - MadAppGang</li>
+<li><a href="https://github.com/ruvnet/claude-flow">[Claude Flow</a>](https://github.com/ruvnet/claude-flow) - ruvnet</li>
+<li><a href="https://github.com/ChrisRoyse/610ClaudeSubagents">[610ClaudeSubagents</a>](https://github.com/ChrisRoyse/610ClaudeSubagents) - ChrisRoyse</li>
+</ul>
+<hr>
+<h3>Feedback</h3>
+<p>Report issues or request features:</p>
+<ul>
+<li>GitHub Issues: https://github.com/marcuspat/turbo-flow-claude/issues</li>
+<li>Use 👍/👎 in Claude to provide feedback</li>
+</ul>
+<hr>
+<p><strong>Full Changelog:</strong> v1.0.4...v1.0.5</p></div>
+  <section class="assets-wrap">
+    <h2>Assets</h2>
+    <p class="noassets">No binary assets on this release — grab the source at the tag on GitHub.</p>
+  </section>
+  <nav class="pn-nav"><a class="pn" href="../v1.0.4/">&larr; v1.0.4</a><a class="pn" href="../v3.0/">v3.0 &rarr;</a></nav>
+  <p class="backline"><a href="../../../..#timeline">all releases</a></p>
+</main>
+<footer class="foot">
+  <p class="foot-note">Static pages generated from the GitHub Releases API. Binaries always live in their GitHub release; these pages point at them.</p>
+  <p class="foot-links"><span>GitHub:</span> <a href="https://github.com/marcuspat">Marcus Patman</a> <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> <a href="https://github.com/creandotumatrix-labs">creandotumatrix-labs</a> <span class="tap">tap: <code>brew tap marcuspat/homebrew-tap</code></span></p>
+</footer>
+<script src="../../../../assets/site.js" defer></script>
+</body>
+</html>

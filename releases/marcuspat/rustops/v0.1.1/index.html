@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v0.1.1 — rustops (marcuspat)</title>
+<meta name="description" content="Early-stage AIOps toolkit in Rust: Z-score/IQR anomaly detection, alert correlation, event-sourced incidents, Prometheus pipeline.">
+<meta property="og:title" content="v0.1.1 — rustops (marcuspat)">
+<meta property="og:description" content="Early-stage AIOps toolkit in Rust: Z-score/IQR anomaly detection, alert correlation, event-sourced incidents, Prometheus pipeline.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2306060b%22/%3E%3Cpath%20d%3D%22M8%2012l5%204-5%204%22%20stroke%3D%22%237c6aff%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15%2021h9%22%20stroke%3D%22%234cc9f0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/style.css">
+<style>:root{--acc-a:#7c6aff;--acc-b:#4cc9f0;}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../../../../"><svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><rect width="32" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 13l4 3-4 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 19.5h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>fleet/releases</a>
+  <nav><a href="../../../../#marcuspat" class="on">Marcus Patman</a><a href="../../../../#adventurewave-labs">adventurewave-labs</a><a href="../../../../#creandotumatrix-labs">creandotumatrix-labs</a></nav>
+</header>
+<main class="wrap rel">
+  <nav class="crumbs"><a href="../../../..">fleet/releases</a><span>/</span><a href="../../../..#marcuspat">marcuspat</a><span>/</span><a href="https://github.com/marcuspat/rustops">rustops</a><span>/</span><span class="here">v0.1.1</span></nav>
+  <header class="rel-head">
+    <h1 class="rel-tag"><span class="v">v0.1.1</span><span class="scan" aria-hidden="true"></span></h1>
+    <p class="rel-name">RustOps v0.1.1 — reqwest 0.12 / kube 4.2 / prometheus 0.14 migration </p>
+    <p class="rel-meta"><time datetime="2026-10-12T03:55:31Z">Oct 12, 2026</time> &middot; Rust</p>
+  </header>
+  <div class="notes"><h3>v0.1.1 — the security-migration release</h3>
+<p>106 commits since v0.1.0 (Jan 30), all through the cross-model gate. Headlines:</p>
+<h4>Dependency migration (clears every audit ignore)</h4>
+<ul>
+<li><strong>reqwest 0.11.27 → 0.12.28</strong>, <strong>kube 0.87.2 → 4.2.0</strong> + k8s-openapi 0.28, <strong>prometheus 0.13.4 → 0.14.0</strong>, <strong>hyper 0.14 → 1.12</strong> (direct client use ported to reqwest inside the same resilience wrapper)</li>
+<li>Vulnerable pins <strong>removed from the lockfile, not ignored</strong>: rustls-webpki 0.101.7 → 0.103.15, rustls 0.21.12 → 0.23.45, h2 0.3.27 → 0.4.20, protobuf 2.28.0 → 3.7.2</li>
+<li><code>.cargo/audit.toml</code> ignore list emptied — <code>cargo audit</code> exits 0 (7 pre-existing unmaintained/unsound warnings stay visible per policy)</li>
+<li>Dropped declared-but-unused deps: oauth2, mockito, prometheus-static-metric; wiremock 0.5 → 0.6</li>
+</ul>
+<h4>Correctness (gate rounds, all real catches)</h4>
+<ul>
+<li>PrometheusAdapter basic auth actually wired (was silently never sent); form-urlencoded query POST (the form Prometheus accepts); wire-level auth tests</li>
+<li>Real SCC cycle detection; numerically stable LOO; HNSW re-index recall; honest ANN/MSRV/stats contracts; timeout-0 = unbounded semantics; cancelled-history preservation; async rollback restored</li>
+<li>Bencher-format benchmarks that measure real paths (not the 429 retry limiter)</li>
+</ul>
+<h3>Known caveat (for Marcus)</h3>
+<p>The <strong>main-only Benchmarks CI job is red</strong> since #21: criterion 0.4 <code>--save-baseline main</code> errors on a fresh rust-cache (&quot;no sample.json&quot;) — deterministic, reproduced twice. One-line fix in <code>.github/workflows/test.yml</code> (drop <code>--save-baseline main</code>; the bencher parser doesn&#x27;t use it), but the gh token can&#x27;t push workflow changes (no workflow scope) — needs your hand or a pat. Every functional check (tests matrix ×3 OS, lint, audit, integration, property) is green on #21.</p>
+<h3>Evidence</h3>
+<ul>
+<li>PR #21 CI: all jobs green except the main-only Benchmarks job noted above.</li>
+<li>Local on main: <code>cargo build</code> clean, 25/25 test suites, <code>cargo audit</code> exit 0 with empty ignores.</li>
+<li>Tag matches the workspace manifest 0.1.1.</li>
+</ul></div>
+  <section class="assets-wrap">
+    <h2>Assets</h2>
+    <p class="noassets">No binary assets on this release — grab the source at the tag on GitHub.</p>
+  </section>
+  <nav class="pn-nav"><a class="pn" href="../v0.1.0/">&larr; v0.1.0</a><a class="pn" href="../v0.1.2/">v0.1.2 &rarr;</a></nav>
+  <p class="backline"><a href="../../../..#timeline">all releases</a></p>
+</main>
+<footer class="foot">
+  <p class="foot-note">Static pages generated from the GitHub Releases API. Binaries always live in their GitHub release; these pages point at them.</p>
+  <p class="foot-links"><span>GitHub:</span> <a href="https://github.com/marcuspat">Marcus Patman</a> <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> <a href="https://github.com/creandotumatrix-labs">creandotumatrix-labs</a> <span class="tap">tap: <code>brew tap marcuspat/homebrew-tap</code></span></p>
+</footer>
+<script src="../../../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v5.2.0 — turbo-flow (marcuspat)</title>
+<meta name="description" content="The rules layer for AI-written code — rig-lite: a fail-closed cross-model review gate, a written constitution, git-versioned memory. Any harness, any repo. v1-4">
+<meta property="og:title" content="v5.2.0 — turbo-flow (marcuspat)">
+<meta property="og:description" content="The rules layer for AI-written code — rig-lite: a fail-closed cross-model review gate, a written constitution, git-versioned memory. Any harness, any repo. v1-4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2306060b%22/%3E%3Cpath%20d%3D%22M8%2012l5%204-5%204%22%20stroke%3D%22%237c6aff%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15%2021h9%22%20stroke%3D%22%234cc9f0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/style.css">
+<style>:root{--acc-a:#7c6aff;--acc-b:#4cc9f0;}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../../../../"><svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><rect width="32" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 13l4 3-4 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 19.5h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>fleet/releases</a>
+  <nav><a href="../../../../#marcuspat" class="on">Marcus Patman</a><a href="../../../../#adventurewave-labs">adventurewave-labs</a><a href="../../../../#creandotumatrix-labs">creandotumatrix-labs</a></nav>
+</header>
+<main class="wrap rel">
+  <nav class="crumbs"><a href="../../../..">fleet/releases</a><span>/</span><a href="../../../..#marcuspat">marcuspat</a><span>/</span><a href="https://github.com/marcuspat/turbo-flow">turbo-flow</a><span>/</span><span class="here">v5.2.0</span></nav>
+  <header class="rel-head">
+    <h1 class="rel-tag"><span class="v">v5.2.0</span><span class="scan" aria-hidden="true"></span></h1>
+    <p class="rel-name">v5.2.0 — the lean pivot </p>
+    <p class="rel-meta"><time datetime="2026-10-07T14:26:47Z">Oct 7, 2026</time> &middot; Shell</p>
+  </header>
+  <div class="notes"><p>The v5.2 release: Turbo Flow becomes what it always was under the hood — <strong>the rules layer</strong>. One product (rig-lite), one source of truth (AGENTS.md), every file on the surface earning its place. 68 files → <strong>35</strong>; the working tree drops to <strong>1.8 MB</strong>; the v4 era stays fully recoverable in the <code>v1.0.1 → v4.0</code> tags.</p>
+<h3>The three strips (each gated cross-family, each merged by a human)</h3>
+<p>| strip | PR | what happened | |---|---|---| | 1 | #62 | dead weight out: unreferenced logo PNGs (3.1 MB), the V2 stub, the legacy k8s-planes tree, dead V1/V3 CI excludes — 17 files, −3,711 lines | | 2 | #63 | the v4 product half out: the Ruflo install chain, v4 demo + era docs (−7,373 lines). In their place: <strong>AGENTS.md as the source of truth</strong> (CLAUDE.md is a symlink), a minimal kit devcontainer whose postCreate runs the self-test, and READMEs rewritten around one stack line | | 3 | #64 | <strong>tokens.py drops down</strong> — the multi-harness token dashboard (zcode + claude + codex + gate), the first open-core drop from the private Turbo Rig, adapted to the kit&#x27;s own gate log |</p>
+<h3>The reposition</h3>
+<p><strong>ZCode builds · Claude Code reviews (Ruflo mod installed when you want orchestration) · Codex backs up the review. The kit ships none of them.</strong> Any harness that reads AGENTS.md works here; the gate knows the builder families and refuses same-family review. Ruflo grew its own onboarding (<code>npx ruflo@latest init wizard</code>, plugin marketplace, built-in memory + console) — Turbo Flow now points at it for execution instead of wrapping it.</p>
+<h3>Why trust it</h3>
+<ul>
+<li><strong>252 self-test checks ALL PASS</strong> — grown by this release with ported auth-guard cases, a devcontainer contract, and the tokens fixture suite (<strong>34 cases, TZ-pinned</strong>, passing identically in UTC, Denver, New York, Tokyo)</li>
+<li>The gate earned its keep on its own repo: across the three PRs it caught a <strong>timezone-dependent test suite that would have broken UTC CI and the devcontainer</strong>, crash paths on malformed JSON in every adapter, dead links, overclaims, and a jq dependency without an honest skip — every catch became a test</li>
+<li>tokens.py is read-only by construction (SQLite <code>mode=ro</code>, no writes anywhere), and the keystore token never reaches argv</li>
+<li>Fail-closed everywhere: ambiguity is REVISE, humans hold the merge button — this release was merged by one</li>
+</ul></div>
+  <section class="assets-wrap">
+    <h2>Assets</h2>
+    <p class="noassets">No binary assets on this release — grab the source at the tag on GitHub.</p>
+  </section>
+  <nav class="pn-nav"><a class="pn" href="../v5.1.0/">&larr; v5.1.0</a><a class="pn" href="../v5.3.0/">v5.3.0 &rarr;</a></nav>
+  <p class="backline"><a href="../../../..#timeline">all releases</a></p>
+</main>
+<footer class="foot">
+  <p class="foot-note">Static pages generated from the GitHub Releases API. Binaries always live in their GitHub release; these pages point at them.</p>
+  <p class="foot-links"><span>GitHub:</span> <a href="https://github.com/marcuspat">Marcus Patman</a> <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> <a href="https://github.com/creandotumatrix-labs">creandotumatrix-labs</a> <span class="tap">tap: <code>brew tap marcuspat/homebrew-tap</code></span></p>
+</footer>
+<script src="../../../../assets/site.js" defer></script>
+</body>
+</html>

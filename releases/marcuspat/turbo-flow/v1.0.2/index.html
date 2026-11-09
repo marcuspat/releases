@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v1.0.2 — turbo-flow (marcuspat)</title>
+<meta name="description" content="The rules layer for AI-written code — rig-lite: a fail-closed cross-model review gate, a written constitution, git-versioned memory. Any harness, any repo. v1-4">
+<meta property="og:title" content="v1.0.2 — turbo-flow (marcuspat)">
+<meta property="og:description" content="The rules layer for AI-written code — rig-lite: a fail-closed cross-model review gate, a written constitution, git-versioned memory. Any harness, any repo. v1-4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2306060b%22/%3E%3Cpath%20d%3D%22M8%2012l5%204-5%204%22%20stroke%3D%22%237c6aff%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15%2021h9%22%20stroke%3D%22%234cc9f0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/style.css">
+<style>:root{--acc-a:#7c6aff;--acc-b:#4cc9f0;}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../../../../"><svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><rect width="32" height="32" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 13l4 3-4 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 19.5h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>fleet/releases</a>
+  <nav><a href="../../../../#marcuspat" class="on">Marcus Patman</a><a href="../../../../#adventurewave-labs">adventurewave-labs</a><a href="../../../../#creandotumatrix-labs">creandotumatrix-labs</a></nav>
+</header>
+<main class="wrap rel">
+  <nav class="crumbs"><a href="../../../..">fleet/releases</a><span>/</span><a href="../../../..#marcuspat">marcuspat</a><span>/</span><a href="https://github.com/marcuspat/turbo-flow">turbo-flow</a><span>/</span><span class="here">v1.0.2</span></nav>
+  <header class="rel-head">
+    <h1 class="rel-tag"><span class="v">v1.0.2</span><span class="scan" aria-hidden="true"></span></h1>
+    <p class="rel-name">Alpha 1.0.2 </p>
+    <p class="rel-meta"><time datetime="2025-10-17T04:24:10Z">Oct 17, 2025</time> &middot; Shell</p>
+  </header>
+  <div class="notes"><h3><strong>Release Notes: Turbo Flow Advanced Agentic Development Environment Alpha 1.0.2</strong></h3>
+<p>This release provisions a complete, automated development environment for the <strong>Claude Flow</strong> and <strong>Agentic Flow</strong> agentic frameworks. It includes core tool installation, expanded CLI support, cloud integration, an interactive project configuration wizard, and a pre-configured <code>tmux</code> workspace for immediate productivity.</p>
+<hr>
+<h3><strong>Core Environment &amp; Setup (<code>setup.sh</code>)</strong></h3>
+<p>This script bootstraps the entire development environment.</p>
+<ul>
+<li><strong>Core Frameworks:</strong></li>
+</ul>
+<ul>
+<li>Installs <strong><code>@anthropic-ai/claude-code</code></strong> (v2.7.0+ compatible).</li>
+<li>Installs <strong><code>claude-flow@alpha</code></strong> and initializes a new project in the workspace.</li>
+<li>Installs <strong><code>agentic-flow</code></strong> for multi-model agent execution.</li>
+</ul>
+<ul>
+<li><strong>Monitoring &amp; Tooling:</strong></li>
+</ul>
+<ul>
+<li>Installs the <code>uv</code> Python package manager.</li>
+<li>Installs <strong><code>claude-monitor</code></strong> for real-time token and usage tracking.</li>
+<li>Installs <strong><code>direnv</code></strong> for automatic environment variable management.</li>
+</ul>
+<ul>
+<li><strong>Additional CLI Tool Support:</strong></li>
+</ul>
+<ul>
+<li>The <code>setup.sh</code> script now includes installers for several other popular AI and developer CLIs.</li>
+<li><strong><code>Direnv</code></strong> is installed by default.</li>
+<li>The following tools are included as commented-out lines, allowing for easy manual installation by editing the script:</li>
+<li><code>opencode-ai</code></li>
+<li><code>@google/gemini-cli</code></li>
+<li><code>@just-every/code</code></li>
+<li><code>terminal-jarvis</code></li>
+<li><code>@vibe-kit/grok-cli</code></li>
+<li><code>run-deepseek-cli</code></li>
+<li><code>@openai/codex</code></li>
+</ul>
+<ul>
+<li><strong>Browser Automation (MCP):</strong></li>
+</ul>
+<ul>
+<li>Upgrades Playwright installation from a simple <code>npm install</code> to being installed and registered as a first-class MCP (Model Context Protocol) server (<code>@playwright/mcp</code>).</li>
+<li>Installs and registers two other key MCP servers for AI-driven browser tasks:</li>
+<li><code>chrome-devtools-mcp</code></li>
+<li><code>mcp-chrome-bridge</code></li>
+</ul>
+<ul>
+<li><strong>Project Scaffolding:</strong></li>
+</ul>
+<ul>
+<li>Creates a standard <code>package.json</code> (as <code>&quot;type&quot;: &quot;module&quot;</code>) and <code>tsconfig.json</code>.</li>
+<li>Builds a standard project directory structure (<code>src</code>, <code>tests</code>, <code>docs</code>, etc.).</li>
+</ul>
+<ul>
+<li><strong>Agent &amp; Configuration:</strong></li>
+</ul>
+<ul>
+<li>Clones and installs over 610 pre-defined sub-agent prompts from the <code>610ClaudeSubagents</code> repository.</li>
+<li>Installs custom agents, including <code>doc-planner.md</code> and <code>microtask-breakdown.md</code>.</li>
+<li>Replaces the default <code>CLAUDE.md</code> with a custom, project-specific configuration file.</li>
+<li>The new Turbo-Flow Wizard allows Claude to optiimize your CLAUDE.md based upon your answers.</li>
+</ul>
+<ul>
+<li><strong>Shell Integration &amp; Aliases:</strong></li>
+</ul>
+<ul>
+<li>Updates <code>~/.bashrc</code> with a comprehensive set of <strong>200+ aliases</strong> for <code>claude-flow</code> (<code>cf-<em></code>) and <code>agentic-flow</code> (<code>af-</em></code>), including full support for the new <strong>v2.7.0+ ReasoningBank</strong> commands.</li>
+<li>Creates <code>cf-with-context.sh</code> and <code>af-with-context.sh</code> wrapper scripts to automatically inject <code>CLAUDE.md</code> and agent context into commands.</li>
+</ul>
+<ul>
+<li><strong>Deployment:</strong></li>
+</ul>
+<ul>
+<li>Adds support for <strong>Rackspace Spot Instances</strong>, enabling cost-effective cloud-based development and deployment.</li>
+</ul>
+<hr>
+<h3><strong>New Feature: Turbo Flow Wizard (Project Scaffolding)</strong></h3>
+<p>This release introduces the <strong><code>turbo-flow-wizard.sh</code></strong>, an interactive tool to automate project-specific configuration.</p>
+<ul>
+<li><strong>Interactive Setup:</strong> Guides the user through a series of questions to define project scope.</li>
+<li><strong>Deep Configuration:</strong> Covers:</li>
+<li><strong>12 Application Types</strong> (Web, API, Mobile, ML, etc.)</li>
+<li><strong>Technology Stacks</strong> (React, Node, Python, Go, etc.)</li>
+<li><strong>7 Development Methodologies</strong> (SPARC, TDD, BDD, etc.)</li>
+<li><strong>19 Selectable Features</strong> (Auth, CI/CD, Docker, etc.)</li>
+<li><strong>Automatic Merging:</strong></li>
+<li>Generates a temporary <code>CLAUDE.pre</code> file based on user answers.</li>
+<li><strong>Automatically uses the Claude CLI</strong> to merge the new <code>CLAUDE.pre</code> with the existing <code>CLAUDE.md</code>, instantly tailoring the AI&#x27;s core instructions to the new project.</li>
+</ul>
+<hr>
+<h3><strong>Verification (<code>post-setup.sh</code>)</strong></h3>
+<p>A health-check script that runs after setup to ensure all critical components are correctly installed and available.</p>
+<ul>
+<li>✅ Verifies that the <code>claude</code> CLI is in the system path.</li>
+<li>✅ Verifies that the <code>claude-monitor</code> CLI is in the system path.</li>
+<li>✅ Confirms that the <code>$AGENTS_DIR</code> is populated with <code>.md</code> agent files.</li>
+<li>✅ Checks for the existence of the main <code>CLAUDE.md</code> configuration file in the workspace.</li>
+</ul>
+<hr>
+<h3><strong>Developer Experience (<code>tmux-workspace.sh</code>)</strong></h3>
+<p>This script automatically provisions a <code>tmux</code> session named <code>claude-dev</code> to launch all necessary services and organize the workspace for maximum productivity.</p>
+<ul>
+<li><strong>Window 1 (dev-1):</strong></li>
+<li>A clean shell prompt for agentic development, testing, and file management.</li>
+<li><strong>Window 2 (dev-2):</strong></li>
+<li>A second clean shell prompt for agentic development, allowing for parallel tasks.</li>
+<li><strong>Window 3 (monitor):</strong></li>
+<li>Runs <code>claude-monitor</code> for a persistent, real-time view of AI token usage and costs.</li>
+<li><strong>Window 4 (htop):</strong></li>
+<li>Runs <code>htop</code> to monitor system processes and resource consumption.</li>
+</ul>
+<p><strong>To use, simply attach to the session:</strong></p>
+<pre><code>tmux attach-session -t claude-dev</code></pre></div>
+  <section class="assets-wrap">
+    <h2>Assets</h2>
+    <p class="noassets">No binary assets on this release — grab the source at the tag on GitHub.</p>
+  </section>
+  <nav class="pn-nav"><a class="pn" href="../v1.0.1/">&larr; v1.0.1</a><a class="pn" href="../v1.0.4/">v1.0.4 &rarr;</a></nav>
+  <p class="backline"><a href="../../../..#timeline">all releases</a></p>
+</main>
+<footer class="foot">
+  <p class="foot-note">Static pages generated from the GitHub Releases API. Binaries always live in their GitHub release; these pages point at them.</p>
+  <p class="foot-links"><span>GitHub:</span> <a href="https://github.com/marcuspat">Marcus Patman</a> <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> <a href="https://github.com/creandotumatrix-labs">creandotumatrix-labs</a> <span class="tap">tap: <code>brew tap marcuspat/homebrew-tap</code></span></p>
+</footer>
+<script src="../../../../assets/site.js" defer></script>
+</body>
+</html>
